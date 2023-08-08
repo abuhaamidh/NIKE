@@ -1,0 +1,93 @@
+import React from 'react'
+import Header from '../../Header/Header'
+import { Form } from 'react-bootstrap'
+import { Button } from 'react-bootstrap'
+import { Card } from 'react-bootstrap'
+import { useNavigate } from 'react-router-dom'
+
+
+function Signin() {
+  var usenavigate= useNavigate();
+  function routeTo(){
+    
+    usenavigate("/")
+  }
+  return (
+
+    <div class="signup">
+        < Header/>
+        <img style ={{height:"30px", width:"50px",marginTop:"20px", marginLeft:"50%"}} onClick={routeTo}id="headerlogo" src="https://cdn.mos.cms.futurecdn.net/786NzPhpXo6G8hkutJkHTM-1200-80.jpg"></img>
+        <div className="signinhdr">
+      Your account for everything from nike 
+  </div>
+<div class="signinform">
+    <Card style={{ width: '18rem' , border:"none"}}>
+     
+      <Card.Body>
+      <Form>
+      <Form.Group className="mb-3" controlId="formBasicEmail">
+        <Form.Control type="email" placeholder="Email address" />
+       
+      </Form.Group>
+
+      <Form.Group className="mb-3" controlId="formBasicPassword">
+      <Form.Control type="password" placeholder="Password" />
+      </Form.Group>
+
+      <Form.Group className="mb-3" controlId="formBasicEmail">
+      <Form.Control type="text" placeholder="First Name" />
+      </Form.Group>
+
+      <Form.Group className="mb-3" controlId="formBasicEmail">
+      <Form.Control type="text" placeholder="Last Name" />
+      </Form.Group>
+     
+      <div className="row">
+                    <div className="col-md-4">
+                
+                        <Form.Group controlId="doa">
+                            <Form.Control id="dob" type="date" placeholder="DOB" />
+                           
+                        </Form.Group>
+                       
+                </div>
+             </div>
+             <p id="dobreward">Get a Nike Member Reward every year on your Birthday</p>
+             
+      <Form.Group className="mb-3" controlId="formBasicEmail">
+      <Form.Control type="text" placeholder="Nationality" />
+      </Form.Group>
+
+      <Form.Group className="male" controlId="formBasicEmail">
+      <Form.Control type="text" placeholder="Male" />
+      </Form.Group>
+      
+      <Form.Group className="female" controlId="formBasicEmail">
+      <Form.Control type="text" placeholder="Female" />
+      </Form.Group>
+    
+      <Form.Group style={{marginTop:"15px"}}className="checkbx" controlId="formBasicCheckbox">
+      <Form.Check type="checkbox" label="Sign up for emails to get updates from Nike." />
+      </Form.Group>
+
+      <Button className="signinbtn" type="submit">
+        join us
+      </Button>
+    </Form>
+        
+      
+      </Card.Body>
+    </Card>
+  
+
+
+    </div>
+
+    <div class="sifooter">
+
+    </div>
+    </div>
+  )
+}
+
+export default Signin
