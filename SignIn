@@ -1,0 +1,61 @@
+import React from 'react'
+import Button from 'react-bootstrap/Button';
+import Form from 'react-bootstrap/Form';
+import Card from 'react-bootstrap/Card';
+import { useNavigate } from 'react-router-dom';
+import Header from '../Header/Header';
+
+function Forms() {
+  var usenavigate = useNavigate();
+
+  function redirectTO() {
+    usenavigate("/form")
+  }
+  function goTo(){
+    usenavigate("/signin")
+  }
+  function routeTo(){
+    usenavigate("/")
+  }
+  return (
+    <div>
+      <Header />
+      <img onClick={routeTo} style ={{height:"50px", width:"80px" ,marginLeft:"50%"}} id="headerlogo" src="https://cdn.mos.cms.futurecdn.net/786NzPhpXo6G8hkutJkHTM-1200-80.jpg"></img>
+      <div className="accountheader">
+      Your account for everything from nike 
+  </div>
+      <div class="loginform">
+        <Card style={{ width: '18rem', border: "none" }}>
+          <Card.Body>
+            <Form>
+              <Form.Group className="mb-3" controlId="formBasicEmail">
+                <Form.Control type="email" placeholder="Email address" />
+                <Form.Text className="text-muted">
+
+                </Form.Text>
+              </Form.Group>
+
+              <Form.Group className="mb-3" controlId="formBasicPassword">
+
+                <Form.Control type="password" placeholder="Password" />
+              </Form.Group>
+              <Form.Group className="mb-3" controlId="formBasicCheckbox">
+                <Form.Check type="checkbox" label="keep me signed in" />
+                <p id="forget"> Forgot your password?</p>
+              </Form.Group>
+              <Button id="btn" type="submit">
+                Submit
+              </Button>
+              <p class="joinus">Not a member? <a onClick={goTo} id="joinus"> Join us</a></p>
+            </Form>
+          </Card.Body>
+        </Card>
+      </div>
+      <div class="footer">
+        
+      </div>
+    </div>
+  )
+}
+
+export default Forms
